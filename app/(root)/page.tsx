@@ -12,6 +12,7 @@ import testimonial02 from '@/public/testimonials/depoimento2.png'
 import testimonial03 from '@/public/testimonials/depoimento3.png'
 import testimonial04 from '@/public/testimonials/depoimento4.png'
 import { CreateSpotLeadSheet } from '@/features/spot-leads/components/create-spot-lead-sheet'
+import { FacebookPixel } from '@/components/facebook-pixel'
 
 export default function Page() {
   return (
@@ -234,6 +235,7 @@ export default function Page() {
         </section>
       </main>
 
+      <FacebookPixel />
       <CreateSpotLeadSheet />
     </>
   )
