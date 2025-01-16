@@ -61,14 +61,12 @@ export const sendFacebookTracking = async ({
           user_data: {
             fbp,
             fbc,
-
-            client_ip_address: ip,
-            client_user_agent: userAgent,
-
             ln: lastName,
             fn: firstName,
+            client_ip_address: ip,
             ct: hash(location?.city),
             st: hash(location?.state),
+            client_user_agent: userAgent,
             country: hash(location?.country),
             ph: formattedPhone ? hash(formattedPhone) : null,
           },
@@ -92,7 +90,18 @@ export const sendFacebookTracking = async ({
     console.log({
       eventName,
       response: response.data,
-      eventData: JSON.stringify(eventData, null, 2),
+      user_data: {
+        fbp,
+        fbc,
+        ln: lastName,
+        fn: firstName,
+        ct: location?.city,
+        ph: formattedPhone,
+        st: location?.state,
+        client_ip_address: ip,
+        country: location?.country,
+        client_user_agent: userAgent,
+      },
     })
   } catch (error) {
     console.error('Error sending facebook tracking', {
