@@ -25,8 +25,8 @@ export const sendFacebookTracking = async ({
 }) => {
   const cookieStore = cookies()
 
+  const pixelId = process.env.FACEBOOK_PIXEL_ID
   const accessToken = process.env.FACEBOOK_ACCESS_TOKEN
-  const pixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID
 
   if (!pixelId || !accessToken) {
     console.error('Facebook pixel id or access token not found')
