@@ -93,6 +93,7 @@ export const sendFacebookTracking = async ({
       user_data: {
         fbp,
         fbc,
+        nameParts,
         ln: lastName,
         fn: firstName,
         ct: location?.city,
