@@ -4,18 +4,15 @@ import { IoIosCloseCircle, IoIosCheckmarkCircle } from 'react-icons/io'
 import logo from '@/public/logo.svg'
 import Video from './_components/video'
 import tagsImage from '@/public/tags.jpg'
-import lottieForm from '@/public/lottie/lottie-form.json'
 import traqueamentoImage from '@/public/traqueamento.jpg'
-import lottieLeads from '@/public/lottie/lottie-leads.json'
 import functionalityGif from '@/public/gif/functionality.gif'
-import { LottieAnimation } from '@/components/lottie-animation'
+import { LeadFormButton } from './_components/lead-form-button'
 import testimonial01 from '@/public/testimonials/depoimento1.png'
 import testimonial02 from '@/public/testimonials/depoimento2.png'
 import testimonial03 from '@/public/testimonials/depoimento3.png'
 import testimonial04 from '@/public/testimonials/depoimento4.png'
-import { LeadFormButton } from './_components/lead-form-button'
-import { CreateSpotLeadSheet } from '@/features/spot-leads/components/create-spot-lead-sheet'
 import { CreateSpotLeadForm } from '@/features/spot-leads/components/crate-spot-lead-form'
+import { CreateSpotLeadSheet } from '@/features/spot-leads/components/create-spot-lead-sheet'
 
 export default function Page() {
   return (
@@ -72,11 +69,7 @@ export default function Page() {
 
         <section className="flex items-center justify-center bg-[#0c0c0c] px-4 py-6">
           <div className="flex max-w-[78.125rem] flex-col gap-4 md:flex-row md:gap-8">
-            <div className="mx-auto w-full max-w-[432px]">
-              <LottieAnimation animationData={lottieLeads} />
-            </div>
-
-            <div className="space-y-4 text-center md:space-y-6 md:text-left">
+            <div className="flex flex-col items-center gap-4 text-center md:space-y-6">
               <h2 className="text-lg font-bold leading-tight md:text-xl">
                 Você tem ideia do trabalho que dá para concretizar uma venda no
                 mundo digital? Imagine precisar de 100 leads apenas para
@@ -168,11 +161,7 @@ export default function Page() {
             </div>
 
             <div className="flex flex-col items-center gap-4 md:flex-row md:gap-8">
-              <div className="mx-auto max-w-[300px]">
-                <LottieAnimation animationData={lottieForm} />
-              </div>
-
-              <div className="space-y-4 text-center md:space-y-6 md:text-left">
+              <div className="space-y-4 text-center md:space-y-6">
                 <h2 className="text-balance text-lg font-bold leading-tight md:text-2xl">
                   O ÚNICO Formulário baseado concorrente do Typeform, Blip, RD
                   Station com BAIXO CUSTO e alta qualidade.

@@ -6,7 +6,7 @@ import { headers } from 'next/headers'
 import { cookies } from 'next/headers'
 
 import { hash } from '@/lib/utils'
-import { ipWhois } from '@/lib/ip-whois'
+import { findip } from '@/lib/findip'
 
 export const sendFacebookTracking = async ({
   name,
@@ -25,25 +25,32 @@ export const sendFacebookTracking = async ({
 }) => {
   const cookieStore = cookies()
 
-  const pixelId = process.env.FACEBOOK_PIXEL_ID
   const accessToken = process.env.FACEBOOK_ACCESS_TOKEN
+  const pixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID
 
   if (!pixelId || !accessToken) {
     console.error('Facebook pixel id or access token not found')
-    return null
+    return
   }
 
   try {
     const { ip, location, userAgent } = await requestLocationAndBrowser()
 
-    const fbp = cookieStore.get('_fbp')?.value
-    const fbc = cookieStore.get('_fbc')?.value
+    const fbp = cookieStore.get('_fbp')?.value ?? null
+    const fbc = cookieStore.get('_fbc')?.value ?? null
 
-    const firstName = name?.split(' ')[0]?.toLowerCase()?.trim()
-    const lastName = name?.split(' ')[1]?.toLowerCase()?.trim()
-    const formattedPhone = phone?.replace(/\D/g, '')?.trim()
+    const nameParts = name?.trim().split(/\s+/) ?? []
+    const firstName = nameParts[0] ? hash(nameParts[0].toLowerCase()) : null
 
-    const eventData = {
+    const lastName =
+      nameParts.length > 1
+        ? hash(nameParts.slice(1).join(' ').toLowerCase())
+        : null
+
+    const formattedPhone = phone?.replace(/\D/g, '') ?? null
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const eventData: Record<string, any> = {
       data: [
         {
           event_id: eventId,
@@ -54,22 +61,24 @@ export const sendFacebookTracking = async ({
           user_data: {
             fbp,
             fbc,
+
             client_ip_address: ip,
             client_user_agent: userAgent,
-            ln: lastName ? hash(lastName) : null,
-            fn: firstName ? hash(firstName) : null,
-            ct: hash(location?.city?.toLowerCase()),
-            zp: hash(location?.postal?.replace(/\D/g, '')),
-            st: hash(location?.region_code?.toLowerCase()),
+
+            ln: lastName,
+            fn: firstName,
+            ct: hash(location?.city),
+            st: hash(location?.state),
+            country: hash(location?.country),
             ph: formattedPhone ? hash(formattedPhone) : null,
-            country: hash(location?.country_code?.toLowerCase()),
           },
-          custom_data: {
-            ...extraData,
-          },
+          custom_data: extraData,
         },
       ],
-      test_event_code: testEventCode,
+    }
+
+    if (testEventCode) {
+      eventData.test_event_code = testEventCode
     }
 
     const url = `https://graph.facebook.com/v21.0/${pixelId}/events?access_token=${accessToken}`
@@ -78,50 +87,18 @@ export const sendFacebookTracking = async ({
       headers: {
         'Content-Type': 'application/json',
       },
-      params: {
-        access_token: accessToken,
-      },
     })
 
-    if (response.status !== 200) {
-      console.error('Error sending facebook tracking', {
-        eventName,
-        response: response.data,
-        facebook: {
-          pixelId,
-          eventId,
-          accessToken,
-          testEventCode,
-        },
-      })
-    }
-
-    if (response.status === 200) {
-      console.log('Facebook tracking sent', {
-        eventName,
-        response: response.data,
-        facebook: {
-          pixelId,
-          eventId,
-          accessToken,
-          testEventCode,
-        },
-      })
-    }
-
-    return null
+    console.log({
+      eventName,
+      response: response.data,
+      eventData: JSON.stringify(eventData, null, 2),
+    })
   } catch (error) {
     console.error('Error sending facebook tracking', {
       eventName,
-      error,
-      facebook: {
-        pixelId,
-        eventId,
-        accessToken,
-        testEventCode,
-      },
+      error: error instanceof Error ? error.message : error,
     })
-    return null
   }
 }
 
@@ -141,13 +118,20 @@ export const requestLocationAndBrowser = async () => {
     ip = '::1'
   }
 
-  const address = await ipWhois(ip)
+  const address = ip ? await findip(ip) : null
 
   return {
     ip,
-    location: address,
     os: parser.getOS().name,
     browser: parser.getBrowser().name,
     userAgent: header.get('user-agent'),
+    location: {
+      city: address?.city.names?.en,
+      lat: address?.location?.latitude,
+      lon: address?.location?.longitude,
+      country: address?.country?.iso_code,
+      timezone: address?.location?.time_zone,
+      state: address?.subdivisions?.[0]?.iso_code,
+    },
   }
 }
