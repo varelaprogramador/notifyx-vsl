@@ -1,18 +1,14 @@
 import Image from 'next/image'
 import { IoIosCloseCircle, IoIosCheckmarkCircle } from 'react-icons/io'
 
-import logo from '@/public/logo.svg'
 import Video from './_components/video'
-import tagsImage from '@/public/tags.jpg'
-import traqueamentoImage from '@/public/traqueamento.jpg'
-import functionalityGif from '@/public/gif/functionality.gif'
+import tagsImage from '@/public/automacao-make.png'
+import traqueamentoImage from '@/public/script.png'
+import functionalityGif from '@/public/dash.jpeg'
 import { LeadFormButton } from './_components/lead-form-button'
-import testimonial01 from '@/public/testimonials/depoimento1.png'
-import testimonial02 from '@/public/testimonials/depoimento2.png'
-import testimonial03 from '@/public/testimonials/depoimento3.png'
-import testimonial04 from '@/public/testimonials/depoimento4.png'
 import { CreateSpotLeadSheet } from '@/features/spot-leads/components/create-spot-lead-sheet'
 import { FacebookPixel } from '@/components/facebook-pixel'
+import { Star } from 'lucide-react'
 
 export default function Page() {
   return (
@@ -21,8 +17,8 @@ export default function Page() {
         <div className="sticky top-0 z-40 flex flex-col items-center justify-center gap-4 bg-black px-4 py-4 md:py-8">
           <h2 className="text-center text-lg font-bold leading-tight md:text-2xl">
             🔥{' '}
-            <strong className="text-[#921fee]">
-              Garanta O typeform Brasileiro com Acesso Eterno!
+            <strong className="text-[#10b981]">
+              Garanta O notifyx Brasileiro com Acesso Eterno!
             </strong>
           </h2>
 
@@ -32,16 +28,20 @@ export default function Page() {
         <section className="flex flex-col items-center justify-center gap-6 bg-white px-4 py-6 text-black md:py-8">
           <Image
             priority
-            src={logo}
+            src={'/logo.png'}
+            width={500}
+            height={500}
             alt="Spotform"
             draggable={false}
             className="pointer-events-none max-h-14 w-full select-none object-contain"
           />
 
           <h2 className="max-w-4xl px-4 text-center text-base font-normal leading-tight md:text-[1.5rem]">
-            <strong>Não pague mais typeform em dólar! </strong>
-            <strong className="text-[#921fee]">
-              Conquiste novos Leads Qualificados de forma eficiente por um preço
+            <strong>
+              Não perca mais tempo com mensagens manuais no WhatsApp!{' '}
+            </strong>
+            <strong className="text-[#10b981]">
+              Automatize suas conversas e aumente suas vendas por um preço
               justo!
             </strong>
           </h2>
@@ -55,7 +55,7 @@ export default function Page() {
           <div className="space-y-2 text-center">
             <p className="text-md font-bold">Suporte 24h via whatsapp</p>
 
-            <ul className="font-semibold text-[#921fee]">
+            <ul className="font-semibold text-[#10b981]">
               <li>+ Grupo de networking</li>
               <li>+ Integração com make</li>
               <li>+ Notificações de novos lead</li>
@@ -71,27 +71,26 @@ export default function Page() {
           <div className="flex max-w-[78.125rem] flex-col gap-4 md:flex-row md:gap-8">
             <div className="flex flex-col items-center gap-4 text-center md:space-y-6">
               <h2 className="text-lg font-bold leading-tight md:text-xl">
-                Você tem ideia do trabalho que dá para concretizar uma venda no
-                mundo digital? Imagine precisar de 100 leads apenas para
-                concretizar uma única venda. Essa realidade pode ser
-                extremamente desafiadora e desanimadora para muitos.
+                Você tem ideia do trabalho que dá para gerenciar mensagens no
+                WhatsApp manualmente?
               </h2>
 
-              <p className="leading-tight text-[#b6b6b6]">
-                Imagine filtrar seus clientes e trazer somente quem realmente
-                tem interesse no seu produto? é exatamente isso que você poderá
-                fazer com o SpotForm.
+              <p className="leading-tight text-white">
+                Imagine precisar responder centenas de mensagens por dia, enviar
+                promoções para clientes, acompanhar leads... Essa realidade pode
+                ser extremamente desgastante e desmotivadora para muitos.
               </p>
 
               <h2 className="text-lg font-bold leading-tight md:text-xl">
-                <strong className="text-[#921fee]">
+                <strong className="text-[#10b981]">
                   Nossas Funcionalidades
                 </strong>{' '}
-                - O CRM que mais entrega, sendo o mais acessível do mercado.
+                - O Disparador que mais entrega, sendo o mais acessível do
+                mercado.
               </h2>
 
-              <p className="leading-tight text-[#b6b6b6]">
-                1- Faça gestão dos seus Leads e crie formulários dinâmicos.
+              <p className="leading-tight text-white">
+                1- Dashboard para visualizacao de contatos e kpis.
               </p>
 
               <Image
@@ -102,9 +101,8 @@ export default function Page() {
                 className="pointer-events-none mx-auto w-full max-w-[500px] select-none rounded-md object-contain shadow-sm md:mx-0"
               />
 
-              <p className="leading-tight text-[#b6b6b6]">
-                2- Código pixel, rastreamento Google, Redirecionamento rápido
-                para WhatsApp.
+              <p className="leading-tight text-white">
+                2- Crie Scripts vencedores, para utilizar no seus disparos.
               </p>
 
               <Image
@@ -114,10 +112,10 @@ export default function Page() {
                 alt="Rastreamento: Facebook Pixel, Google Analytics, Redirecionamento WhatsApp"
                 className="pointer-events-none mx-auto w-full max-w-[500px] select-none rounded-md object-contain shadow-sm md:mx-0"
               />
-
-              <p className="leading-tight text-[#b6b6b6]">
-                3- Faça gestão dos seus leads e classifique sua audiência com
-                tags personalizadas
+              <h2 className="text-green-500">(EM DESENVOLVIMENTO)</h2>
+              <p className="leading-tight text-white">
+                Faça automaçoes de forma nativa e nao dependa de ferramentas
+                externas.
               </p>
 
               <Image
@@ -131,55 +129,118 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="flex items-center justify-center bg-[#170c20] px-4 py-6 md:py-12">
+        <section className="flex items-center justify-center bg-[#10b981] px-4 py-6 md:py-12">
           <div className="flex max-w-[78.125rem] flex-col items-center justify-center gap-4 md:gap-8">
             <h2 className="text-balance text-lg font-bold leading-tight md:text-2xl">
               DEPOIMENTO DE NOSSOS CLIENTES PILOTO
             </h2>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              {Array.from({ length: 4 }).map((_, index) => {
-                const testimonials = [
-                  testimonial01,
-                  testimonial02,
-                  testimonial03,
-                  testimonial04,
-                ]
-
-                return (
-                  <div key={index}>
-                    <Image
-                      priority
-                      draggable={false}
-                      src={testimonials[index]}
-                      alt={`Depoimento ${index + 1}`}
-                      className="pointer-events-none mx-auto select-none object-contain drop-shadow-sm"
-                    />
+              {/* Testimonial 1 */}
+              <div className="rounded-lg bg-white p-6 text-black">
+                <div className="mb-4 flex flex-col items-center">
+                  <h4 className="font-bold">CARLOS SILVA</h4>
+                  <p className="text-sm text-zinc-600">MARKETING</p>
+                  <div className="mt-1 flex">
+                    {[1, 2, 3, 4, 5].map(star => (
+                      <Star
+                        key={star}
+                        className="h-4 w-4 fill-yellow-500 text-yellow-500"
+                      />
+                    ))}
                   </div>
-                )
-              })}
+                </div>
+                <p className="text-center text-sm">
+                  &quot;EU DESCOBRI ESSA SOLUÇÃO POR UM AMIGO E POSSO DIZER QUE
+                  A PLATAFORMA QUE MUDOU O JOGO PARA MIM. CONSEGUI OTIMIZAR
+                  TODAS AS MINHAS VENDAS E FAZER CAPTAÇÕES MAIS EFETIVAS. &quot;
+                </p>
+                <div className="mt-4 flex justify-center gap-2"></div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="rounded-lg bg-white p-6 text-black">
+                <div className="mb-4 flex flex-col items-center">
+                  <h4 className="font-bold">ANA FERREIRA</h4>
+                  <p className="text-sm text-zinc-600">E-COMMERCE</p>
+                  <div className="mt-1 flex">
+                    {[1, 2, 3, 4, 5].map(star => (
+                      <Star
+                        key={star}
+                        className="h-4 w-4 fill-yellow-500 text-yellow-500"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-center text-sm">
+                  &quot; É A MELHOR SOLUÇÃO QUE JÁ ENCONTREI. MUDOU A FORMA COMO
+                  EU FAÇO VENDAS NO MEU NEGÓCIO. CONSEGUI TRIPLICAR MINHAS
+                  VENDAS USANDO O NOTIFYX DE FORMA MUITO RECORRENTE. &quot;
+                </p>
+                <div className="mt-4 flex justify-center gap-2"></div>
+              </div>
+              {/* Testimonial 1 */}
+              <div className="rounded-lg bg-white p-6 text-black">
+                <div className="mb-4 flex flex-col items-center">
+                  <h4 className="font-bold">MARCOS OLIVEIRA</h4>
+                  <p className="text-sm text-zinc-600">AGÊNCIA DIGITAL</p>
+                  <div className="mt-1 flex">
+                    {[1, 2, 3, 4, 5].map(star => (
+                      <Star
+                        key={star}
+                        className="h-4 w-4 fill-yellow-500 text-yellow-500"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-center text-sm">
+                  &quot; DESDE QUE COMECEI A USAR O NOTIFYX, CONSEGUI
+                  AUTOMATIZAR 90% DAS MINHAS INTERAÇÕES COM CLIENTES. ECONOMIZO
+                  PELO MENOS 4 HORAS POR DIA E AUMENTEI MINHA TAXA DE CONVERSÃO
+                  EM 35%. SIMPLESMENTE INDISPENSÁVEL! &quot;
+                </p>
+                <div className="mt-4 flex justify-center gap-2"></div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="rounded-lg bg-white p-6 text-black">
+                <div className="mb-4 flex flex-col items-center">
+                  <h4 className="font-bold">JULIANA SANTOS</h4>
+                  <p className="text-sm text-zinc-600">E-COMMERCE</p>
+                  <div className="mt-1 flex">
+                    {[1, 2, 3, 4, 5].map(star => (
+                      <Star
+                        key={star}
+                        className="h-4 w-4 fill-yellow-500 text-yellow-500"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-center text-sm">
+                  &quot;EU LITERALMENTE É A MELHOR SOLUÇÃO QUE JÁ ENCONTREI.
+                  MUDOU A FORMA COMO EU FAÇO VENDAS NO MEU NEGÓCIO. CONSEGUI
+                  TRIPLICAR MINHAS VENDAS USANDO O NOTIFYX DE FORMA MUITO
+                  RECORRENTE. &quot;
+                </p>
+                <div className="mt-4 flex justify-center gap-2"></div>
+              </div>
             </div>
 
             <div className="flex flex-col items-center gap-4 md:flex-row md:gap-8">
               <div className="space-y-4 text-center md:space-y-6">
                 <h2 className="text-balance text-lg font-bold leading-tight md:text-2xl">
-                  O ÚNICO Formulário baseado concorrente do Typeform, Blip, RD
-                  Station com BAIXO CUSTO e alta qualidade.
+                  O ÚNICO Sistema de automação de WhatsApp com BAIXO CUSTO e
+                  alta qualidade.
                 </h2>
 
-                <p className="leading-tight text-[#b6b6b6]">
-                  Com certeza você já viu algumas plataformas que criam
-                  formulários, mas que cobram de você uma mensalidade alta por
-                  mês e ainda por cima limita a quantidade de formulários e
-                  respostas de leads.
+                <p className="leading-tight text-white">
+                  Com o NotifyX você vai se organizar profissionalmente,
+                  economizar tempo, aumentar produtividade, não perder mais
+                  vendas por conta da limitação de quantidade de mensagens e
+                  respostas do WhatsApp.
                 </p>
 
-                <p className="leading-tight text-[#b6b6b6]">
-                  Aqui você poderá: Criar formulários ilimitados e receber
-                  quantos leads quiser.
-                </p>
-
-                <p className="leading-tight text-[#b6b6b6]">
+                <p className="leading-tight text-white">
                   Além de <strong>SUPER QUALIFICAR SEUS LEADS</strong>
                 </p>
               </div>
@@ -189,15 +250,13 @@ export default function Page() {
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
                 <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-[#930000] bg-[#5b0c0c] p-6 text-center text-[#e41326]">
                   <IoIosCloseCircle className="size-8" />
-                  <p className="font-bold">
-                    Você não terá custo por formulário
-                  </p>
+                  <p className="font-bold">Você não terá custo por mensagem</p>
                 </div>
 
                 <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-[#930000] bg-[#5b0c0c] p-6 text-center text-[#e41326]">
                   <IoIosCloseCircle className="size-8" />
                   <p className="font-bold">
-                    Não ficará limitado na criação de novos formulários
+                    Não ficará limitado a quantidade de mensagem
                   </p>
                 </div>
               </div>
@@ -206,7 +265,7 @@ export default function Page() {
                 <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-[#196024] bg-[#14541e] p-6 text-center text-[#14df33]">
                   <IoIosCheckmarkCircle className="size-8" />
                   <p className="font-bold">
-                    Poderá utilizar o formulários com quantos Clientes quiser
+                    Poderá enviar quantas mensagens quiser
                   </p>
                 </div>
 

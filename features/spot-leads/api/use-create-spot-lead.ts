@@ -8,9 +8,11 @@ import { createSpotLeadSchema } from '../schemas'
 export function useCreateSpotLead() {
   const mutation = useMutation({
     mutationFn: async (values: z.infer<typeof createSpotLeadSchema>) => {
-      await api.post('/spot-leads/create', {
+      await api.post('/matra/leads/create-2', {
         ...values,
-        origin: 'Captação 2',
+        origin: 'NOTIFYX',
+        whatsappGroup: '',
+        message: [''],
       })
       return
     },

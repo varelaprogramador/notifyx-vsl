@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import logo from '@/public/logo.svg'
+import logo from '@/public/logo.png'
 import { Button } from '@/components/ui/button'
 import { facebookPixelEvent } from '@/lib/utils'
 import { PhoneInput } from '@/components/phone-input'
