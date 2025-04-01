@@ -8,9 +8,9 @@ import { Toaster } from '@/components/ui/sonner'
 import { QueryProvider } from '@/providers/query-provider'
 
 export const metadata: Metadata = {
-  title: 'Captação | SpotForm',
+  title: 'Captação | NotifyX',
   description: 'Pagina de captação de leads',
-  metadataBase: new URL('https://www.captacao2.spotform.com.br'),
+  metadataBase: new URL('https://captacao.notifyx.com.br'),
   alternates: {
     canonical: './',
   },
