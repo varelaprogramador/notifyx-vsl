@@ -69,6 +69,7 @@ export const CreateSpotLeadSheet = () => {
             eventId,
             eventName: 'Lead',
             trackType: 'track',
+            testEventCode: 'TEST36345',
             extraData: {
               ph: phone,
             },
@@ -78,6 +79,7 @@ export const CreateSpotLeadSheet = () => {
             eventId,
             eventName: 'Lead',
             phone: values.phone,
+            testEventCode: 'TEST36345',
           })
 
           // router.push('/redirect')

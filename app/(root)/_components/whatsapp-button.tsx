@@ -18,6 +18,7 @@ export const WhatsappButton = ({ title }: WhatsAppButtonProps) => {
       eventId,
       eventName: 'Lead',
       trackType: 'track',
+      testEventCode: 'TEST36345',
       extraData: {
         content_name: 'Entrar no grupo do WhatsApp',
         content_category: 'WhatsApp Button',
@@ -29,6 +30,7 @@ export const WhatsappButton = ({ title }: WhatsAppButtonProps) => {
     sendFacebookTracking({
       eventId,
       eventName: 'Lead',
+      testEventCode: 'TEST36345',
       extraData: {
         content_name: 'Entrar no grupo do WhatsApp',
         content_category: 'WhatsApp Button',

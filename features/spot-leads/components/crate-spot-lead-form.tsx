@@ -56,6 +56,7 @@ export const CreateSpotLeadForm = () => {
             eventId,
             eventName: 'Lead',
             trackType: 'track',
+            testEventCode: 'TEST36345',
             extraData: {
               ph: phone,
             },
@@ -65,6 +66,7 @@ export const CreateSpotLeadForm = () => {
             eventId,
             eventName: 'Lead',
             phone: values.phone,
+            testEventCode: 'TEST36345',
           })
 
           // router.push('/redirect')

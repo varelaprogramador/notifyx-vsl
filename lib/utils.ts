@@ -11,16 +11,20 @@ export const facebookPixelEvent = ({
   eventName,
   extraData,
   trackType = 'track',
+  testEventCode,
 }: {
   eventId: string
   eventName: string
   trackType: 'track' | 'trackCustom'
   extraData?: Record<string, string>
+  testEventCode?: string
 }) => {
   if (typeof window === 'undefined' || typeof window.fbq !== 'function') return
 
-  // Registra evento com ID do evento para evitar duplicação
-  window.fbq(trackType, eventName, extraData, { eventID: eventId })
+  window.fbq(trackType, eventName, extraData, {
+    eventID: eventId,
+    test_event_code: testEventCode,
+  })
 
   // Registra novamente para garantir que o evento seja capturado
   if (eventName === 'Lead') {
