@@ -57,7 +57,7 @@ export const sendFacebookTracking = async ({
           event_name: eventName,
           action_source: 'website',
           event_time: Math.floor(Date.now() / 1000),
-          event_source_url: 'https://www.captacao2.spotform.com.br',
+          event_source_url: 'https://captacao.notifyx.com.br/',
           user_data: {
             fbp,
             fbc,
