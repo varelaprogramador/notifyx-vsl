@@ -21,6 +21,10 @@ export const facebookPixelEvent = ({
 }) => {
   if (typeof window === 'undefined' || typeof window.fbq !== 'function') return
 
+  if (testEventCode) {
+    window.fbq('set', 'test_event_code', testEventCode)
+  }
+
   window.fbq(trackType, eventName, extraData, {
     eventID: eventId,
     test_event_code: testEventCode,
