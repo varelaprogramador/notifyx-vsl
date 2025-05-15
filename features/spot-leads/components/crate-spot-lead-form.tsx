@@ -4,7 +4,7 @@ import { z } from 'zod'
 import { nanoid } from 'nanoid'
 import { Loader2 } from 'lucide-react'
 import { useForm } from 'react-hook-form'
-// import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Button } from '@/components/ui/button'
@@ -32,7 +32,7 @@ import {
 } from '@/components/ui/form'
 
 export const CreateSpotLeadForm = () => {
-  // const router = useRouter()
+  const router = useRouter()
 
   const { mutate, isPending } = useCreateSpotLead()
 
@@ -56,7 +56,7 @@ export const CreateSpotLeadForm = () => {
             eventId,
             eventName: 'Lead',
             trackType: 'track',
-            testEventCode: 'TEST36345',
+
             extraData: {
               ph: phone,
             },
@@ -66,10 +66,10 @@ export const CreateSpotLeadForm = () => {
             eventId,
             eventName: 'Lead',
             phone: values.phone,
-            testEventCode: 'TEST36345',
+
           })
 
-          // router.push('/redirect')
+          router.push('/redirect')
           form.reset()
         },
       })

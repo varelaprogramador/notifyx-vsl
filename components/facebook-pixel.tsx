@@ -15,7 +15,7 @@ export const FacebookPixel = () => {
         eventId,
         eventName: 'PageView',
         trackType: 'track',
-        testEventCode: 'TEST36345',
+
         extraData: {
           page_title: document.title,
           referrer: document.referrer,
@@ -28,7 +28,7 @@ export const FacebookPixel = () => {
       sendFacebookTracking({
         eventId,
         eventName: 'PageView',
-        testEventCode: 'TEST36345',
+
         extraData: {
           page_title: document.title,
           referrer: document.referrer,
