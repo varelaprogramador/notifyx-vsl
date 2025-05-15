@@ -12,7 +12,7 @@ export function useCreateSpotLead() {
         ...values,
         origin: 'NOTIFYX',
         whatsappGroup: 'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
-        message: [
+        messages: [
           'Opa! tudo bem? 😊',
           'Esse disparo já é pelo notifyX, para garantir que voce está no grupo, clique no link abaixo:',
           'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
