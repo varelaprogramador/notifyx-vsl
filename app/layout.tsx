@@ -46,6 +46,10 @@ export default function RootLayout({
                 'https://connect.facebook.net/en_US/fbevents.js');
                 fbq('init', '${process.env.FACEBOOK_PIXEL_ID}');
                 fbq('track', 'PageView');
+                
+                // Definir eventos padrão para o Facebook Pixel
+                window.fbq.allowDuplicates = true;
+                window.fbq.disablePushState = true;
               `}
             </Script>
             <noscript>

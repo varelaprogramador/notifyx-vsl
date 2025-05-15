@@ -20,6 +20,9 @@ export const WhatsappButton = ({ title }: WhatsAppButtonProps) => {
       trackType: 'track',
       extraData: {
         content_name: 'Entrar no grupo do WhatsApp',
+        content_category: 'WhatsApp Button',
+        value: '1.00',
+        currency: 'BRL',
       },
     })
 
@@ -27,7 +30,10 @@ export const WhatsappButton = ({ title }: WhatsAppButtonProps) => {
       eventId,
       eventName: 'Lead',
       extraData: {
-        content_name: 'Formulário Enviado',
+        content_name: 'Entrar no grupo do WhatsApp',
+        content_category: 'WhatsApp Button',
+        value: '1.00',
+        currency: 'BRL',
       },
     })
   }

@@ -18,7 +18,17 @@ export const facebookPixelEvent = ({
   extraData?: Record<string, string>
 }) => {
   if (typeof window === 'undefined' || typeof window.fbq !== 'function') return
+
+  // Registra evento com ID do evento para evitar duplicação
   window.fbq(trackType, eventName, extraData, { eventID: eventId })
+
+  // Registra novamente para garantir que o evento seja capturado
+  if (eventName === 'Lead') {
+    console.log('Disparando evento Lead:', { eventId, extraData })
+    setTimeout(() => {
+      window.fbq(trackType, eventName, extraData, { eventID: eventId })
+    }, 100)
+  }
 }
 
 export const hash = (value?: string) => {
