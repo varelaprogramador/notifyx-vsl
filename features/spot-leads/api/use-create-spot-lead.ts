@@ -11,8 +11,13 @@ export function useCreateSpotLead() {
       await api.post('/matra/leads/create-2', {
         ...values,
         origin: 'NOTIFYX',
-        whatsappGroup: '',
-        message: [''],
+        whatsappGroup: 'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
+        message: [
+          'Opa! tudo bem? 😊',
+          'Esse disparo já é pelo notifyX, para garantir que voce está no grupo, clique no link abaixo:',
+          'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
+          'Obrigado!',
+        ],
       })
       return
     },
