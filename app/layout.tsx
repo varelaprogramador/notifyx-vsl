@@ -14,9 +14,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
   },
-  other: {
-    'facebook-domain-verification': '6jw96kz1oi3376orw13h3d39lmp0ue',
-  },
+
   icons: {
     icon: '/favicon.svg',
   },
