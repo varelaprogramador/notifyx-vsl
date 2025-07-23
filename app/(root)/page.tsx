@@ -2,22 +2,13 @@ import Image from "next/image"
 import { IoIosCloseCircle, IoIosCheckmarkCircle } from "react-icons/io"
 import { Star, Scissors } from "lucide-react"
 import { LeadFormButton } from "./_components/lead-form-button";
+import { FacebookPixel } from "@/components/facebook-pixel";
+import { CreateSpotLeadSheet } from "@/features/spot-leads/components/create-spot-lead-sheet";
+import Video from "./_components/video";
 
 
 
-// Componente para vídeo demo
-function DemoVideo({ src }: { src: string }) {
-  return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <div className="aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
-        <video className="w-full h-full object-cover" controls poster="/placeholder.svg?height=400&width=800">
-          <source src={src} type="video/mp4" />
-          Seu navegador não suporta vídeos.
-        </video>
-      </div>
-    </div>
-  )
-}
+
 
 
 export default function LandingPage() {
@@ -52,7 +43,7 @@ export default function LandingPage() {
             Sistema completo de gestão para barbearias modernas!
           </h2>
 
-          <DemoVideo src="/demo-YESBARBER.mp4" />
+          <Video src="/main-video.mp4" />
 
           <div className="space-y-2 text-center">
             <p className="text-md font-bold">Suporte especializado 24h</p>
@@ -255,6 +246,9 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
+
+      <FacebookPixel />
+      <CreateSpotLeadSheet />
     </>
   )
 }
