@@ -91,7 +91,7 @@ export default function LandingPage() {
               <Image
                 unoptimized
                 draggable={false}
-                src="/placeholder.svg?height=300&width=500"
+                src="/dash.jpeg"
                 alt="Dashboard YESBARBER"
                 width={500}
                 height={300}
@@ -99,12 +99,12 @@ export default function LandingPage() {
               />
 
               <p className="leading-tight text-white">
-                2- Sistema de agendamentos inteligente com notificações automáticas.
+                2- Sistema de agendamentos inteligente .
               </p>
               <Image
                 priority
                 draggable={false}
-                src="/placeholder.svg?height=300&width=500"
+                src="/agenda.jpeg"
                 alt="Sistema de Agendamentos"
                 width={500}
                 height={300}
@@ -113,11 +113,11 @@ export default function LandingPage() {
 
               <h2 className="text-orange-500">(DISPONÍVEL AGORA)</h2>
               <p className="leading-tight text-white">
-                Controle financeiro completo com relatórios detalhados e programa de fidelidade integrado.
+                Programa de fidelidade integrado.
               </p>
               <Image
                 priority
-                src="/placeholder.svg?height=300&width=500"
+                src="/fidelidade.jpeg"
                 draggable={false}
                 alt="Controle Financeiro"
                 width={500}
