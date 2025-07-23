@@ -1,22 +1,25 @@
 import Image from "next/image"
 import { IoIosCloseCircle, IoIosCheckmarkCircle } from "react-icons/io"
-import { Star, BarChart3 } from "lucide-react"
+import { Star } from "lucide-react"
 
 import { LeadFormButton } from "./_components/lead-form-button"
+import Video from "./_components/video"
+import { CreateSpotLeadSheet } from "@/features/spot-leads/components/create-spot-lead-sheet"
+import { FacebookPixel } from "@/components/facebook-pixel"
 
-// Componente para vídeo demo
-function DemoVideo({ src }: { src: string }) {
-  return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <div className="aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border-2 border-white">
-        <video className="w-full h-full object-cover" controls poster="/placeholder.svg?height=400&width=800">
-          <source src={src} type="video/mp4" />
-          Seu navegador não suporta vídeos.
-        </video>
-      </div>
-    </div>
-  )
-}
+// // Componente para vídeo demo
+// function DemoVideo({ src }: { src: string }) {
+//   return (
+//     <div className="relative w-full max-w-4xl mx-auto">
+//       <div className="aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border-2 border-white">
+//         <video className="w-full h-full object-cover" controls poster="/placeholder.svg?height=400&width=800">
+//           <source src={src} type="video/mp4" />
+//           Seu navegador não suporta vídeos.
+//         </video>
+//       </div>
+//     </div>
+//   )
+// }
 
 export default function MatraLandingPage() {
   return (
@@ -32,13 +35,8 @@ export default function MatraLandingPage() {
 
         {/* Seção Hero */}
         <section className="flex flex-col items-center justify-center gap-6 bg-white px-4 py-6 text-black md:py-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-black border-2 border-black">
-              <BarChart3 className="h-8 w-8 text-white" />
-            </div>
-            <span className="text-4xl font-bold text-black">MATRA CRM</span>
-          </div>
 
+          <Image src="/logo.png" alt="Logo" width={500} height={500} className="rounded-3xl" />
           <h2 className="max-w-4xl px-4 text-center text-base font-normal leading-tight md:text-[1.5rem]">
             <strong>Pare de perder vendas por falta de organização! </strong>
             <strong className="text-black">
@@ -50,14 +48,14 @@ export default function MatraLandingPage() {
             CRM completo para empresas que querem crescer de verdade!
           </h2>
 
-          <DemoVideo src="/demo-matra.mp4" />
+          <Video src="/main-video.mp4" />
 
           <div className="space-y-2 text-center">
             <p className="text-md font-bold">Suporte especializado 24h</p>
             <ul className="font-semibold text-black">
-              <li>+ Automação de vendas</li>
-              <li>+ Relatórios avançados</li>
-              <li>+ Integração com WhatsApp</li>
+              <li>+ Criacao de funil de vendas</li>
+              <li>+ Importação de clientes e leads</li>
+              <li>+ Dashboard inteligente</li>
             </ul>
           </div>
 
@@ -92,7 +90,7 @@ export default function MatraLandingPage() {
               <Image
                 unoptimized
                 draggable={false}
-                src="/placeholder.svg?height=300&width=500&text=Dashboard+MATRA+CRM"
+                src="/dash-crm.png"
                 alt="Dashboard MATRA CRM"
                 width={500}
                 height={300}
@@ -100,12 +98,12 @@ export default function MatraLandingPage() {
               />
 
               <p className="leading-tight text-white">
-                2- Automação de vendas com sequências inteligentes e follow-up automático.
+                2- Criacao de funil de vendas simples e intuitivo.
               </p>
               <Image
                 priority
                 draggable={false}
-                src="/placeholder.svg?height=300&width=500&text=Automação+de+Vendas"
+                src="/funil.png"
                 alt="Automação de Vendas"
                 width={500}
                 height={300}
@@ -114,13 +112,13 @@ export default function MatraLandingPage() {
 
               <h2 className="text-white">(DISPONÍVEL AGORA)</h2>
               <p className="leading-tight text-white">
-                Relatórios avançados com métricas de conversão e integração nativa com WhatsApp Business.
+                3-Importação de clientes e leads de forma simples e eficiente.
               </p>
               <Image
                 priority
-                src="/placeholder.svg?height=300&width=500&text=Relatórios+Avançados"
+                src="/contacts.png"
                 draggable={false}
-                alt="Relatórios Avançados"
+                alt="Importação de clientes e leads"
                 width={500}
                 height={300}
                 className="pointer-events-none mx-auto w-full max-w-[500px] select-none rounded-md object-contain shadow-sm md:mx-0 border-2 border-white"
@@ -256,6 +254,9 @@ export default function MatraLandingPage() {
           </div>
         </section>
       </main>
+
+      <FacebookPixel />
+      <CreateSpotLeadSheet />
     </>
   )
 }
