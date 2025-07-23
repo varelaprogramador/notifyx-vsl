@@ -1,22 +1,8 @@
 import Image from "next/image"
 import { IoIosCloseCircle, IoIosCheckmarkCircle } from "react-icons/io"
 import { Star, BarChart3 } from "lucide-react"
-import { SignUpButton } from "@clerk/nextjs"
-import { Button } from "@/components/ui/button"
 
-// Componente para o botão de CTA
-function CTAButton({ title }: { title: string }) {
-  return (
-    <SignUpButton mode="modal">
-      <Button
-        size="lg"
-        className="bg-white hover:bg-gray-100 text-black rounded-xl px-8 py-4 text-lg font-bold shadow-lg transform hover:scale-105 transition-all duration-200 border-2 border-white"
-      >
-        {title}
-      </Button>
-    </SignUpButton>
-  )
-}
+import { LeadFormButton } from "./_components/lead-form-button"
 
 // Componente para vídeo demo
 function DemoVideo({ src }: { src: string }) {
@@ -41,7 +27,7 @@ export default function MatraLandingPage() {
           <h2 className="text-center text-lg font-bold leading-tight md:text-2xl">
             🚀 <strong className="text-white">Revolucione sua Gestão de Clientes com o MATRA CRM!</strong>
           </h2>
-          <CTAButton title="Começar Gratuitamente" />
+          <LeadFormButton title="Entrar no grupo vip" />
         </div>
 
         {/* Seção Hero */}
@@ -76,14 +62,9 @@ export default function MatraLandingPage() {
           </div>
 
           <div className="flex items-center justify-center">
-            <SignUpButton mode="modal">
-              <Button
-                size="lg"
-                className="bg-black hover:bg-gray-800 text-white rounded-xl px-8 py-4 text-lg font-bold shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
-                Testar Grátis por 30 Dias
-              </Button>
-            </SignUpButton>
+
+            <LeadFormButton title="Entrar no grupo vip" />
+
           </div>
         </section>
 
