@@ -10,7 +10,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Captação | MATRA CRM',
   description: 'Pagina de captação de leads',
-  metadataBase: new URL('https://captacao.matratecnologiacrm.com'),
+  metadataBase: new URL('https://captacao.matratecnologia.com'),
   alternates: {
     canonical: './',
   },

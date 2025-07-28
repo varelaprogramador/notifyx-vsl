@@ -15,7 +15,7 @@ export default function MatraLandingPage() {
           <h2 className="text-center text-lg font-bold leading-tight md:text-2xl">
             🚀 <strong className="text-white">Desenvolva seu SaaS dos Sonhos com a MATRA!</strong>
           </h2>
-          <LeadFormButton title="Entrar no grupo vip" />
+          <LeadFormButton title="Contato" />
         </div>
 
         {/* Seção Hero */}
@@ -40,7 +40,7 @@ export default function MatraLandingPage() {
             </ul>
           </div>
           <div className="flex items-center justify-center">
-            <LeadFormButton title="Entrar no grupo vip" />
+            <LeadFormButton title="Contato" />
           </div>
         </section>
 
