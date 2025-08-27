@@ -10,12 +10,13 @@ export function useCreateSpotLead() {
     mutationFn: async (values: z.infer<typeof createSpotLeadSchema>) => {
       await api.post('/matra/leads/create-2', {
         ...values,
-        origin: 'MATRA CRM',
-        whatsappGroup: 'https://chat.whatsapp.com/Eifub5mUklEELziE3dkG73',
+        origin: 'VOUZ CRM',
+        whatsappGroup:
+          'https://chat.whatsapp.com/Ddf8G32tEjC6dldQN9h6SY?mode=ems_copy_c',
         messages: [
           'Opa! tudo bem? 😊',
-          'Esse disparo já é pelo MATRA CRM, para garantir que voce está no grupo, clique no link abaixo:',
-          'https://chat.whatsapp.com/Eifub5mUklEELziE3dkG73',
+          'Para garantir que voce está no grupo, clique no link abaixo:',
+          'https://chat.whatsapp.com/Ddf8G32tEjC6dldQN9h6SY?mode=ems_copy_c',
           'Obrigado!',
         ],
       })

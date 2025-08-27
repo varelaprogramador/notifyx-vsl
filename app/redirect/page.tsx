@@ -1,11 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { Loader2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-import logo from '@/public/logo.png'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 
@@ -38,31 +36,28 @@ export default function Page() {
   }, [])
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-4 bg-black p-4">
-      <Image
-        priority
-        src={logo}
-        alt="Spotform"
-        draggable={false}
-        className="pointer-events-none max-h-12 w-full animate-pulse select-none object-contain"
-      />
+    <main className="flex flex-1 flex-col items-center justify-center gap-4 bg-[#0066FF] p-4">
+      <div className="bg-white p-6 rounded-3xl">
+        <h1 className="text-5xl font-bold text-[#0066FF] text-center">VOUZ</h1>
+        <p className="text-xl font-bold text-[#0066FF] text-center">CRM imobiliário</p>
+      </div>
 
-      <Card className="max-w-screen-sm text-center">
-        <CardHeader>
+      <Card className="max-w-screen-sm text-center border-2 border-white">
+        <CardHeader className="bg-[#0066FF] text-white rounded-t-md">
           <CardTitle>Redirecionando...</CardTitle>
-          <CardDescription>
-            Em 5 segundos você será redirecionado para o grupo de WhatsApp.
+          <CardDescription className="text-white">
+            Em 5 segundos você será redirecionado para o grupo VIP de WhatsApp para corretores e imobiliárias.
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="flex flex-col items-center justify-center gap-2">
-          <Loader2 className="size-6 animate-spin" />
-          <Progress value={progress} max={100} />
+        <CardContent className="flex flex-col items-center justify-center gap-2 p-6">
+          <Loader2 className="size-6 animate-spin text-[#0066FF]" />
+          <Progress value={progress} max={100} className="w-full" />
         </CardContent>
 
         {progress === 100 && (
-          <CardFooter>
-            <Button asChild size="lg" className="w-full">
+          <CardFooter className="p-6">
+            <Button asChild size="lg" className="w-full bg-[#0066FF] hover:bg-[#0052CC] text-white">
               <Link
                 rel="noopener noreferrer"
                 referrerPolicy="no-referrer"

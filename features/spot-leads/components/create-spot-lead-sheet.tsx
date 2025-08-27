@@ -1,14 +1,12 @@
 'use client'
 
 import { z } from 'zod'
-import Image from 'next/image'
 import { nanoid } from 'nanoid'
 import { Loader2 } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import logo from '@/public/logo.png'
 import { Button } from '@/components/ui/button'
 import { facebookPixelEvent } from '@/lib/utils'
 import { PhoneInput } from '@/components/phone-input'
@@ -91,20 +89,17 @@ export const CreateSpotLeadSheet = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="w-full max-w-[90%] rounded-md sm:max-w-md">
-        <DialogHeader>
+      <DialogContent className="w-full max-w-[90%] rounded-md sm:max-w-md border-2 border-[#0066FF]">
+        <DialogHeader className="bg-[#0066FF] text-white rounded-t-md p-4 -m-4 mb-4">
           <DialogTitle>
-            <Image
-              priority
-              src={logo}
-              alt="Spotform"
-              draggable={false}
-              className="pointer-events-none max-h-10 w-full select-none object-contain"
-            />
+            <div className="bg-white p-4 rounded-2xl">
+              <h1 className="text-4xl font-bold text-[#0066FF] text-center">VOUZ</h1>
+              <p className="text-lg font-bold text-[#0066FF] text-center">CRM imobiliário</p>
+            </div>
           </DialogTitle>
 
-          <DialogDescription className="text-center">
-            Preencha o formulário e entre no nosso Grupo VIP do WhatsApp.
+          <DialogDescription className="text-center text-white mt-4">
+            Preencha o formulário e entre no nosso Grupo VIP do WhatsApp para corretores e imobiliárias.
           </DialogDescription>
         </DialogHeader>
 
@@ -115,7 +110,7 @@ export const CreateSpotLeadSheet = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>WhatsApp</FormLabel>
+                  <FormLabel className="text-[#0066FF] font-semibold">WhatsApp</FormLabel>
 
                   <FormControl>
                     <PhoneInput
@@ -130,8 +125,8 @@ export const CreateSpotLeadSheet = () => {
               )}
             />
 
-            <Button className="w-full gap-2 uppercase" disabled={isPending}>
-              Quero entrar no Grupo VIP
+            <Button className="w-full gap-2 uppercase bg-[#0066FF] hover:bg-[#0052CC] text-white" disabled={isPending}>
+              Quero conhecer o VOUZ CRM
               {isPending && <Loader2 className="size-4 animate-spin" />}
             </Button>
 
