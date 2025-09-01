@@ -29,38 +29,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning className={sora.className}>
-      {process.env.FACEBOOK_PIXEL_ID &&
-        process.env.NODE_ENV === 'production' && (
-          <>
-            <Script id="fb-pixel" strategy="afterInteractive">
-              {`
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '${process.env.FACEBOOK_PIXEL_ID}');
-                fbq('track', 'PageView');
-                
-                // Definir eventos padrão para o Facebook Pixel
-                window.fbq.allowDuplicates = true;
-                window.fbq.disablePushState = true;
-              `}
-            </Script>
-            <noscript>
-              <Image
-                height="1"
-                width="1"
-                style={{ display: 'none' }}
-                alt=""
-                src={`https://www.facebook.com/tr?id=${process.env.FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
-              />
-            </noscript>
-          </>
-        )}
+      <Script id="fb-pixel" strategy="afterInteractive">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '${process.env.FACEBOOK_PIXEL_ID}');
+          fbq('track', 'PageView');
+        `}
+      </Script>
+      <noscript>
+        <Image
+          height="1"
+          width="1"
+          style={{ display: 'none' }}
+          alt=""
+          src={`https://www.facebook.com/tr?id=${process.env.FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
+        />
+      </noscript>
 
       <body className="flex size-full min-h-dvh flex-col overflow-x-hidden antialiased">
         <QueryProvider>
