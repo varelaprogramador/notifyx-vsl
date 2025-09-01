@@ -57,7 +57,7 @@ export default function MatraLandingPage() {
             verdade!
           </h2>
 
-          <Video src="/main-video2.mp4" />
+          <Video src="/main-video.MP4" />
 
           <div className="space-y-2 text-center">
             <p className="text-md font-bold">Suporte especializado 24h</p>
