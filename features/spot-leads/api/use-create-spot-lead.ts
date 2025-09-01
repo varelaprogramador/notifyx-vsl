@@ -10,12 +10,13 @@ export function useCreateSpotLead() {
     mutationFn: async (values: z.infer<typeof createSpotLeadSchema>) => {
       await api.post('/matra/leads/create-2', {
         ...values,
-        origin: 'NOTIFYX',
-        whatsappGroup: 'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
+        origin: 'VOUZ CRM',
+        whatsappGroup:
+          'https://chat.whatsapp.com/Ddf8G32tEjC6dldQN9h6SY?mode=ems_copy_c',
         messages: [
           'Opa! tudo bem? 😊',
-          'Esse disparo já é pelo notifyX, para garantir que voce está no grupo, clique no link abaixo:',
-          'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
+          'Para garantir que voce está no grupo, clique no link abaixo:',
+          'https://chat.whatsapp.com/Ddf8G32tEjC6dldQN9h6SY?mode=ems_copy_c',
           'Obrigado!',
         ],
       })

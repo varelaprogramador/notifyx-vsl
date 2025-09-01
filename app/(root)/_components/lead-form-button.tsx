@@ -6,7 +6,7 @@ interface LeadFormButtonProps {
   title: string
 }
 
-export const LeadFormButton = ({ title }: LeadFormButtonProps) => {
+export const LeadFormButton: React.FC<LeadFormButtonProps> = ({ title }) => {
   const { onOpen } = useOpenCreateSpotLeadSheet()
 
   return (

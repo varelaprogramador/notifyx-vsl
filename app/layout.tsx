@@ -8,15 +8,13 @@ import { Toaster } from '@/components/ui/sonner'
 import { QueryProvider } from '@/providers/query-provider'
 import Image from 'next/image'
 export const metadata: Metadata = {
-  title: 'Captação | NotifyX',
+  title: 'Captação | MATRA CRM',
   description: 'Pagina de captação de leads',
-  metadataBase: new URL('https://captacao.notifyx.com.br'),
+  metadataBase: new URL('https://captacao.matratecnologiacrm.com'),
   alternates: {
     canonical: './',
   },
-  other: {
-    'facebook-domain-verification': '6jw96kz1oi3376orw13h3d39lmp0ue',
-  },
+
   icons: {
     icon: '/favicon.svg',
   },
