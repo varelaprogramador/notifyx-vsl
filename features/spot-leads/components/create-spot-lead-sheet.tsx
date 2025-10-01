@@ -140,7 +140,7 @@ export const CreateSpotLeadSheet = () => {
             </p>
 
             <p className="text-center text-sm text-muted-foreground">
-              Ou entre em contato diretamente: +55 43 8477-8544
+              Ou entre em contato diretamente: +55 34 8444-3047
             </p>
           </form>
         </Form>
