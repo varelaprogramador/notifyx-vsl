@@ -12,11 +12,11 @@ export function useCreateSpotLead() {
         ...values,
         origin: 'JEREMIAS-MATRA',
         whatsappGroup:
-          'https://wa.me/554384778544?text=Ol%C3%A1%2C%20quero%20desenvolver%20meu%20sass!',
+          'https://wa.me/553484443047?text=Ol%C3%A1%2C%20quero%20desenvolver%20meu%20sass!',
         messages: [
           'Opa! tudo bem? 😊',
           'Esse disparo só é para ter certeza que voce conseguiu entrar em contato, clique no link abaixo caso não tenha entrado:',
-          'https://wa.me/554384778544?text=Ol%C3%A1%2C%20quero%20desenvolver%20meu%20sass!',
+          'https://wa.me/553484443047?text=Ol%C3%A1%2C%20quero%20desenvolver%20meu%20sass!',
           'Obrigado!',
         ],
       })
