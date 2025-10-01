@@ -10,7 +10,7 @@ export function useCreateSpotLead() {
     mutationFn: async (values: z.infer<typeof createSpotLeadSchema>) => {
       await api.post('/matra/leads/create-2', {
         ...values,
-        origin: 'JEREMIAS-MATRA',
+        origin: 'RYAN-MATRA',
         whatsappGroup:
           'https://wa.me/553484443047?text=Ol%C3%A1%2C%20quero%20desenvolver%20meu%20sass!',
         messages: [
