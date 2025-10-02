@@ -35,8 +35,7 @@ export default function MatraLandingPage() {
 
         {/* Seção Hero */}
         <section className="flex flex-col items-center justify-center gap-6 bg-white px-4 py-6 text-black md:py-8">
-
-          <Image src="/logo.png" alt="Logo" width={500} height={500} className="rounded-3xl" />
+          <h1 className="text-center text-2xl font-bold">MATRA CRM</h1>
           <h2 className="max-w-4xl px-4 text-center text-base font-normal leading-tight md:text-[1.5rem]">
             <strong>Pare de perder vendas por falta de organização! </strong>
             <strong className="text-black">
