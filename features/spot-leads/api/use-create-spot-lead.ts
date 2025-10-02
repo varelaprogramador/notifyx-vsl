@@ -11,11 +11,11 @@ export function useCreateSpotLead() {
       await api.post('/matra/leads/create-2', {
         ...values,
         origin: 'MATRA CRM',
-        whatsappGroup: 'https://chat.whatsapp.com/Eifub5mUklEELziE3dkG73',
+        whatsappGroup: 'https://chat.whatsapp.com/FNEgSec1YNrCbCl97sBaKv',
         messages: [
           'Opa! tudo bem? 😊',
           'Esse disparo já é pelo MATRA CRM, para garantir que voce está no grupo, clique no link abaixo:',
-          'https://chat.whatsapp.com/Eifub5mUklEELziE3dkG73',
+          'https://chat.whatsapp.com/FNEgSec1YNrCbCl97sBaKv',
           'Obrigado!',
         ],
       })
