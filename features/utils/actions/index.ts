@@ -23,7 +23,7 @@ export const sendFacebookTracking = async ({
   testEventCode?: string | null
   extraData?: Record<string, unknown>
 }) => {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
 
   const pixelId = process.env.FACEBOOK_PIXEL_ID
   const accessToken = process.env.FACEBOOK_ACCESS_TOKEN
@@ -57,7 +57,7 @@ export const sendFacebookTracking = async ({
           event_name: eventName,
           action_source: 'website',
           event_time: Math.floor(Date.now() / 1000),
-          event_source_url: 'https://captacao.notifyx.com.br/',
+          event_source_url: 'https://captacao.matratecnologia.com',
           user_data: {
             fbp,
             fbc,
@@ -113,7 +113,7 @@ export const sendFacebookTracking = async ({
 }
 
 export const requestLocationAndBrowser = async () => {
-  const header = headers()
+  const header = await headers()
 
   const parser = new UAParser()
   const browser = header.get('user-agent')

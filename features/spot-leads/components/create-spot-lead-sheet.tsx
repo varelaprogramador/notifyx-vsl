@@ -104,7 +104,7 @@ export const CreateSpotLeadSheet = () => {
           </DialogTitle>
 
           <DialogDescription className="text-center">
-            Preencha o formulário e entre no nosso Grupo VIP do WhatsApp.
+            Preencha o formulário e entre em contato conosco.
           </DialogDescription>
         </DialogHeader>
 
@@ -131,12 +131,16 @@ export const CreateSpotLeadSheet = () => {
             />
 
             <Button className="w-full gap-2 uppercase" disabled={isPending}>
-              Quero entrar no Grupo VIP
+              Quero entrar em contato
               {isPending && <Loader2 className="size-4 animate-spin" />}
             </Button>
 
             <p className="text-center text-sm text-muted-foreground">
               Seus dados estão seguros e não serão compartilhados com terceiros.
+            </p>
+
+            <p className="text-center text-sm text-muted-foreground">
+              Ou entre em contato diretamente: +55 43 8477-8544
             </p>
           </form>
         </Form>

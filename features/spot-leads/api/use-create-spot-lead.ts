@@ -10,12 +10,13 @@ export function useCreateSpotLead() {
     mutationFn: async (values: z.infer<typeof createSpotLeadSchema>) => {
       await api.post('/matra/leads/create-2', {
         ...values,
-        origin: 'NOTIFYX',
-        whatsappGroup: 'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
+        origin: 'JEREMIAS-MATRA',
+        whatsappGroup:
+          'https://wa.me/554384778544?text=Ol%C3%A1%2C%20quero%20desenvolver%20meu%20sass!',
         messages: [
           'Opa! tudo bem? 😊',
-          'Esse disparo já é pelo notifyX, para garantir que voce está no grupo, clique no link abaixo:',
-          'https://chat.whatsapp.com/LaIU1YyzZSfC5p8Wb7CzeE',
+          'Esse disparo só é para ter certeza que voce conseguiu entrar em contato, clique no link abaixo caso não tenha entrado:',
+          'https://wa.me/554384778544?text=Ol%C3%A1%2C%20quero%20desenvolver%20meu%20sass!',
           'Obrigado!',
         ],
       })

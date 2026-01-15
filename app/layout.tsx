@@ -8,27 +8,19 @@ import { Toaster } from '@/components/ui/sonner'
 import { QueryProvider } from '@/providers/query-provider'
 import Image from 'next/image'
 export const metadata: Metadata = {
-  title: 'Captação | NotifyX',
+  title: 'Captação | MATRA TECNOLOGIA',
   description: 'Pagina de captação de leads',
-  metadataBase: new URL('https://captacao.notifyx.com.br'),
-  alternates: {
-    canonical: './',
-  },
-  other: {
-    'facebook-domain-verification': '6jw96kz1oi3376orw13h3d39lmp0ue',
-  },
-  icons: {
-    icon: '/favicon.svg',
-  },
+  metadataBase: new URL('https://captacao.matratecnologia.com'),
+  alternates: { canonical: './' },
+
+  icons: { icon: '/favicon.svg' },
 }
 
 const sora = Sora({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning className={sora.className}>
       {process.env.FACEBOOK_PIXEL_ID &&

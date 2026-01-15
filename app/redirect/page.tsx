@@ -68,7 +68,7 @@ export default function Page() {
                 referrerPolicy="no-referrer"
                 href={process.env.NEXT_PUBLIC_WHATSAPP_GROUP_LINK!}
               >
-                Entrar no Grupo VIP
+                Entrar em contato
               </Link>
             </Button>
           </CardFooter>
