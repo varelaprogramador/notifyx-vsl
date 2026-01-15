@@ -4,6 +4,7 @@ import { LeadFormButton } from "./_components/lead-form-button"
 import Video from "./_components/video"
 import { CreateSpotLeadSheet } from "@/features/spot-leads/components/create-spot-lead-sheet"
 import { FacebookPixel } from "@/components/facebook-pixel"
+import { ModalCaptacao } from "@/components/modal-captacao"
 
 export default function MatraLandingPage() {
   return (
@@ -525,7 +526,7 @@ export default function MatraLandingPage() {
               </p>
 
               <div className="border-t border-white/10 pt-8 text-white/40 text-sm">
-                <p>&copy; 2024 MATRA Tecnologia. Todos os direitos reservados. |
+                <p>&copy; 2026 MATRA Tecnologia. Todos os direitos reservados. |
                   <span className="text-gray-300"> ✅ Garantia incondicional | 🔒 Pagamento seguro</span>
                 </p>
               </div>
@@ -534,7 +535,7 @@ export default function MatraLandingPage() {
         </footer>
       </main>
       <FacebookPixel />
-      <CreateSpotLeadSheet />
+      <ModalCaptacao />
     </>
   )
 }

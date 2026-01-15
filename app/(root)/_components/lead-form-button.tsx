@@ -1,13 +1,13 @@
 'use client'
 
-import { useOpenCreateSpotLeadSheet } from '@/features/spot-leads/hooks/use-open-create-spot-lead-sheet'
+import { useModalCaptacao } from '@/hooks/use-modal-captacao'
 
 interface LeadFormButtonProps {
   title: string
 }
 
 export const LeadFormButton: React.FC<LeadFormButtonProps> = ({ title }) => {
-  const { onOpen } = useOpenCreateSpotLeadSheet()
+  const { onOpen } = useModalCaptacao()
 
   return (
     <button
